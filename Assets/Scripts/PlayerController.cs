@@ -63,10 +63,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public float gravityScale = 5;
+
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
         rb.AddForce(movement * speed);
+        rb.AddForce((gravityScale - 1) * rb.mass * Physics.gravity);
     }
 
     void OnTriggerEnter(Collider other)
