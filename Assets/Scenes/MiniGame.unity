@@ -378,7 +378,8 @@ MonoBehaviour:
   countText: {fileID: 1888769507}
   winTextObject: {fileID: 934966571}
   pickUpParent: {fileID: 1739281956}
-  jumpAmount: 10
+  jumpAmount: 20
+  gravityScale: 5
 --- !u!114 &95353995
 MonoBehaviour:
   m_ObjectHideFlags: 0
