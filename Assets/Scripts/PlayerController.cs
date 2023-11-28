@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public GameObject pickUpParent;
     private int totalPickUps;
     public float jumpAmount = 10;
+    public float jumpHeight = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +60,9 @@ public class PlayerController : MonoBehaviour
         {
             // AddForce builds up momemtum by default
             // Use ForceMode.Impulse for immediate hit of force
-            rb.AddForce(Vector3.up * jumpAmount, ForceMode.Impulse);
+            // rb.AddForce(Vector3.up * jumpAmount, ForceMode.Impulse);
+            float jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y * gravityScale));
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 
